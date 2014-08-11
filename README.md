@@ -5,7 +5,9 @@ IRKit GUI
 
 ## 仕組み
 
-#### IRKit GUI (Sinatra) --> Gem`irkit` / `$ irkit` --> IRKit 本体
+#### IRKit GUI (Sinatra) --> RubyGem`irkit` / `$ irkit` --> IRKit 本体
+
+> [気づいたら IRKit GUI つくってた - X X X](http://syonx.hatenablog.com/entry/2014/08/12/011046)
 
 ## インストール
 
@@ -49,5 +51,5 @@ IRKIT_DATA_FILE=/path/to/.irkit.json
         - Bonjour が不安定なときなど
 - __IRKIT_DATA_FILE__
     - 登録した赤外線信号のデータファイルのありか
-        - Gem "irkit" が管理している
+        - RubyGem "irkit" が管理している
         - デフォルトはホームの下
