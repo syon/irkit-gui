@@ -1,11 +1,11 @@
 IRKit GUI
 =========
 
-![screenshot](screenshot.png_)
+![screenshot](screenshot.png)
 
 ## 仕組み
 
-### IRKit GUI (Sinatra) --> Gem`irkit` / `$ irkit` --> IRKit 本体
+#### IRKit GUI (Sinatra) --> Gem`irkit` / `$ irkit` --> IRKit 本体
 
 ## インストール
 
