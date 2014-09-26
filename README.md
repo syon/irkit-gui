@@ -43,9 +43,13 @@ $ bundle exec irkit --delete "the name"
 ### 設定
 __.env__ ファイルのサンプル
 ```bash
+USE_BUNDLER=no
 IRKIT_ADDRESS=192.168.0.16
 IRKIT_DATA_FILE=/path/to/.irkit.json
 ```
+- __USE_BUNDLER__
+    - (default): `yes`
+    - `no`: 内部で呼び出している`$ bundle exec irkit`を`$ irkit`にする
 - __IRKIT_ADDRESS__
     - IRKit に IP アドレス指定で接続する
         - Bonjour が不安定なときなど

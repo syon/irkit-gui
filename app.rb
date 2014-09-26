@@ -1,6 +1,7 @@
 # coding: utf-8
 
 get '/' do
+  load_settings
   @irkit_keys = get_irkit_keys
   slim :index
 end
@@ -23,15 +24,18 @@ post '/delete' do
 end
 
 def irkit(opt, ir_key, answer="")
-  addr   = ENV["IRKIT_ADDRESS"]
-  prefix = ENV["COMMAND_PREFIX"]
+  load_settings
   answer = "echo #{answer} | " if answer
-  if addr
-    result = `#{answer}#{prefix} irkit --#{opt} "#{ir_key}" --address #{addr}`
+  if @addr
+    result = `#{answer} irkit --#{opt} "#{ir_key}" --address #{@addr}`
   else
-    result = `#{answer}#{prefix} irkit --#{opt} "#{ir_key}"`
+    result = `#{answer} irkit --#{opt} "#{ir_key}"`
   end
   result
+end
+
+def load_settings
+  @addr = ENV["IRKIT_ADDRESS"]
 end
 
 def get_irkit_keys
