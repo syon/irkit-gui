@@ -23,12 +23,13 @@ post '/delete' do
 end
 
 def irkit(opt, ir_key, answer="")
-  addr = ENV["IRKIT_ADDRESS"]
+  addr   = ENV["IRKIT_ADDRESS"]
+  prefix = ENV["COMMAND_PREFIX"]
   answer = "echo #{answer} | " if answer
   if addr
-    result = `#{answer}irkit --#{opt} "#{ir_key}" --address #{addr}`
+    result = `#{answer}#{prefix} irkit --#{opt} "#{ir_key}" --address #{addr}`
   else
-    result = `#{answer}irkit --#{opt} "#{ir_key}"`
+    result = `#{answer}#{prefix} irkit --#{opt} "#{ir_key}"`
   end
   result
 end
