@@ -49,7 +49,8 @@ h1.text-center
   img src="icon.png"
   | IRKit GUI
 
-p.addr.text-center = @addr
+- addr = @addr ? @addr : "with Bonjour"
+p.addr.text-center = addr
 
 div.switches.well
   - @irkit_keys.each do |key|

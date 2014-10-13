@@ -41,15 +41,15 @@ $ bundle exec irkit --delete "the name"
 ```
 
 ### 設定
-__.env__ ファイルのサンプル
-```bash
-IRKIT_ADDRESS=192.168.0.16
-IRKIT_DATA_FILE=/path/to/.irkit.json
+__config.yml__ のサンプル
+```yml
+IRKIT_ADDRESS: 192.168.0.16
+IRKIT_DATA_DIR: /path/to/dir
 ```
 - __IRKIT_ADDRESS__
     - IRKit に IP アドレス指定で接続する
         - Bonjour が不安定なときなど
-- __IRKIT_DATA_FILE__
+- __IRKIT_DATA_DIR__
     - 登録した赤外線信号のデータファイルのありか
         - RubyGem "irkit" が管理している
-        - デフォルトはホームの下
+        - デフォルトはホームディレクトリ

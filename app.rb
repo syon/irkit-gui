@@ -35,11 +35,13 @@ def irkit(opt, ir_key, answer="")
 end
 
 def load_settings
-  @addr = ENV["IRKIT_ADDRESS"]
+  @addr = settings.IRKIT_ADDRESS
+  @data_file_dir = settings.IRKIT_DATA_DIR || ENV['HOME']
+rescue
 end
 
 def get_irkit_keys
-  data_file = ENV["IRKIT_DATA_FILE"] || File.expand_path('.irkit.json', ENV['HOME'])
+  data_file = File.expand_path('.irkit.json', @data_file_dir)
   ir_data = Hashie::Mash.new JSON.parse(File.open(data_file).read)["IR"]
   ir_data.keys
 end
