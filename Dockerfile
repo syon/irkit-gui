@@ -5,7 +5,7 @@ RUN apt-get install -y libavahi-compat-libdnssd-dev
 
 # Locale (Allows IRKit japanese key name)
 RUN apt-get install -y language-pack-ja-base language-pack-ja
-ENV LC_ALL=ja_JP.UTF-8
+ENV LANG=ja_JP.UTF-8
 
 # Cache bundle install
 WORKDIR /tmp
