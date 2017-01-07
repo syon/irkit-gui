@@ -12,7 +12,6 @@ RUN bundle install
 # App
 WORKDIR /app
 COPY . /app
-COPY ./.irkit.json /root/
 
 # Run
 EXPOSE 5000

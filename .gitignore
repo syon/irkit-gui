@@ -3,4 +3,6 @@
 /vendor/
 /config.yml
 
+/irkit-data/*
+!/irkit-data/.gitkeep
 .irkit.json
