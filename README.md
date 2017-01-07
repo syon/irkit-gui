@@ -25,6 +25,15 @@ $ foreman start
 - iPhone など他のデバイスからアクセスする場合は IP を指定するなど
     - Mac だと`$ ifconfig | grep "inet "`で表示される`192.168.0.123`とか
 
+
+## Docker
+
+```bash
+$ docker build -t syon/irkit-gui .
+
+$ docker run -it --rm -p 5000:5000 syon/irkit-gui
+```
+
 ## 使い方
 
 ### ボタンを追加する
