@@ -4,5 +4,5 @@
 /config.yml
 
 /irkit-data/*
+/irkit-data/.irkit.json
 !/irkit-data/.gitkeep
-.irkit.json

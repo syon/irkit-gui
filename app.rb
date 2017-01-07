@@ -41,6 +41,6 @@ end
 
 def get_irkit_keys
   data_file = File.expand_path('.irkit.json', ENV['HOME'])
-  ir_data = Hashie::Mash.new JSON.parse(File.open(data_file).read)["IR"]
+  ir_data = JSON.parse(File.open(data_file).read)["IR"]
   ir_data.keys
 end
