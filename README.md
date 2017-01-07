@@ -70,10 +70,6 @@ IRKIT_ADDRESS: 192.168.0.16
 - __IRKIT_ADDRESS__
     - IRKit に IP アドレス指定で接続する
         - Bonjour が不安定なときなど
-- __IRKIT_DATA_DIR__
-    - 登録した赤外線信号のデータファイルのありか
-        - RubyGem "irkit" が管理している
-        - デフォルトはホームディレクトリ
 
 
 ## 便利なもの
