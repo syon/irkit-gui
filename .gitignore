@@ -2,3 +2,5 @@
 /.bundle/
 /vendor/
 /config.yml
+
+.irkit.json
