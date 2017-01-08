@@ -1,0 +1,47 @@
+.container {
+  width: 320px;
+}
+h1 img {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  padding-right: 6px;
+  top: -3px;
+}
+.addr {
+  margin-top: -10px;
+  color: #aaa;
+}
+.switches {
+  margin: 20px 0;
+}
+.switches a span {
+  font-size: 26px;
+}
+.switches button {
+  position: relative;
+}
+.switches .glyphicon {
+  left: 10px;
+  top: 10px;
+  position: absolute;
+  font-size: 24px;
+  color: #ccc;
+}
+#saveform {
+  margin-top: 10px;
+}
+pre {
+  font-size: 11px;
+}
+.cell {
+  float: left;
+  margin-right: 1.5em;
+  font-size: 2em;
+  color: #000000;
+  width: 17em;
+  overflow: hidden;
+}
+#ir_key {
+  width: 100%;
+}

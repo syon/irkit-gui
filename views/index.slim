@@ -1,49 +1,4 @@
 - content_for :title do "IRKit GUI" end
-css:
-  .container {
-    width: 320px;
-  }
-  h1 img {
-    width: 40px;
-    height: 40px;
-    position: relative;
-    padding-right: 6px;
-    top: -3px;
-  }
-  .addr {
-    margin-top: -10px;
-    color: #aaa;
-  }
-  .switches {
-    margin: 20px 0;
-  }
-  .switches a span {
-    font-size: 26px;
-  }
-  .switches button {
-    position: relative;
-  }
-  .switches .glyphicon {
-    left: 10px;
-    top: 10px;
-    position: absolute;
-    font-size: 24px;
-    color: #ccc;
-  }
-  #saveform {
-    margin-top: 10px;
-  }
-  pre {
-    font-size: 11px;
-  }
-	.cell {
-		float: left;
-		margin-right: 1.5em;
-		font-size: 2em;
-		color: #000000;
-		width: 17em;
-		overflow: hidden;
-	}
 
 h1.text-center
   img src="icon.png"
@@ -63,17 +18,3 @@ div.switches.well
       input#ir_key.form-control name="ir_key" placeholder="Enter new name" type="text"
 
 p#result class="alert alert-info" role="alert" style="display:none;"
-
-
-javascript:
-  $(document).on('click', '.switches button', function(){
-    var ir_key = $(this).prop('id');
-    $.ajax({
-      type: "POST",
-      url: "/",
-      data: {"ir_key": ir_key},
-      success: function(data) {
-        $('#result').text(data).show();
-      }
-    });
-  });
