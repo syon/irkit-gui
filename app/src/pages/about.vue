@@ -2,11 +2,8 @@
   f7-page
     f7-navbar(title="About" back-link="Back" sliding)
     f7-block(inner)
-      h1 {{ count }}
-      p Here is About page!
-      p You can go <f7-link back>back</f7-link>.
-      p Mauris posuere sit amet metus id venenatis. Ut ante dolor, tempor nec commodo rutrum, varius at sem. Nullam ac nisi non neque ornare pretium. Nulla mauris mauris, consequat et elementum sit amet, egestas sed orci. In hac habitasse platea dictumst.
-      p Fusce eros lectus, accumsan eget mi vel, iaculis tincidunt felis. Nulla tincidunt pharetra sagittis. Fusce in felis eros. Nulla sit amet aliquam lorem, et gravida ipsum. Mauris consectetur nisl non sollicitudin tristique. Praesent vitae metus ac quam rhoncus mattis vel et nisi. Aenean aliquet, felis quis dignissim iaculis, lectus quam tincidunt ligula, et venenatis turpis risus sed lorem. Morbi eu metus elit. Ut vel diam dolor.
+      div(v-for='k in signals')
+        h1(@click='send(k)') {{ k }}
 </template>
 
 <script>
@@ -14,7 +11,27 @@ export default {
   computed: {
     count () {
       return this.$store.state.count
-    }
-  }
+    },
+    signals () {
+      return Object.keys(this.$store.state.irkit.IR)
+    },
+  },
+  mounted: () => {
+    console.log('mounted')
+  },
+  methods: {
+    send: function (key) {
+      fetch('/send', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        },
+        body: `key=${key}`
+      })
+        .then((res) => { return res.text() })
+        .then((res) => { console.log('success:', res) })
+    },
+  },
 }
 </script>
