@@ -3,7 +3,13 @@
 get '/' do
   load_settings
   @irkit_keys = get_irkit_keys
-  slim :index
+  File.read(File.join('app', 'dist', 'index.html'))
+end
+
+get '/data' do
+  load_settings
+  @irkit_keys = get_irkit_keys
+  json :irkit_keys => @irkit_keys
 end
 
 post '/' do
