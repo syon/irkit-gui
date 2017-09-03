@@ -6,3 +6,5 @@
 /irkit-data/*
 /irkit-data/.irkit.json
 !/irkit-data/.gitkeep
+
+node_modules/
