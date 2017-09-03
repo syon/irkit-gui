@@ -2,6 +2,7 @@
   f7-page
     f7-navbar(title="About" back-link="Back" sliding)
     f7-block(inner)
+      h1 {{ count }}
       p Here is About page!
       p You can go <f7-link back>back</f7-link>.
       p Mauris posuere sit amet metus id venenatis. Ut ante dolor, tempor nec commodo rutrum, varius at sem. Nullam ac nisi non neque ornare pretium. Nulla mauris mauris, consequat et elementum sit amet, egestas sed orci. In hac habitasse platea dictumst.
@@ -9,5 +10,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    count () {
+      return this.$store.state.count
+    }
+  }
+}
 </script>

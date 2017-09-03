@@ -24,12 +24,16 @@ import Routes from './routes.js'
 // Import App Component
 import App from './app'
 
+// Vuex store
+import store from './store'
+
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
 
 // Init App
 new Vue({
   el: '#app',
+  store,
   template: '<app/>',
   // Init Framework7 by passing parameters here
   framework7: {
