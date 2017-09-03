@@ -8,3 +8,5 @@
 !/irkit-data/.gitkeep
 
 node_modules/
+
+server/public/*
