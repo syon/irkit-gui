@@ -1,3 +1,1 @@
-#!/bin/sh
-docker build -t syon/irkit-gui .
-docker run -it -p 5000:5000 -v $(pwd)/irkit-data:/root syon/irkit-gui bash
+docker run -it --rm -p 5005:3000 -v $(pwd):/work syon/irkit-gui bash

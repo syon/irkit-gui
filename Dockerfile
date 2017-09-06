@@ -1,22 +1,17 @@
-FROM syon/ubuntu-ruby
+FROM node:8
 
-# IRKit dependency
-RUN apt-get install -y libavahi-compat-libdnssd-dev
+WORKDIR /work
+COPY . /work
 
-# Locale (Allows IRKit japanese key name)
-RUN apt-get install -y language-pack-ja-base language-pack-ja
-ENV LANG=ja_JP.UTF-8
+RUN cd app && \
+    npm install --silent && \
+    npm run build
 
-# Cache bundle install
-WORKDIR /tmp
-ADD ./Gemfile Gemfile
-ADD ./Gemfile.lock Gemfile.lock
-RUN bundle install
+RUN cd server && \
+    npm install --silent
 
-# App
-WORKDIR /app
-COPY . /app
+WORKDIR /work/server
 
-# Run
-EXPOSE 5000
-CMD ["foreman", "start"]
+EXPOSE 3000
+
+CMD ["npm", "start"]
