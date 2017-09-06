@@ -15,6 +15,7 @@ router.post('/', function(req, res, next) {
       message: JSON.stringify(signal),
     },
   };
+  console.log(options)
   request.post(options, (e, r, body) => {
     res.json(body);
   });
