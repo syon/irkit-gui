@@ -1,13 +1,9 @@
 .DS_Store
-/.bundle/
-/vendor/
-/config.yml
+node_modules/
+.env
 
 /irkit-data/*
 /irkit-data/.irkit.json
 !/irkit-data/.gitkeep
 
-node_modules/
-
-.env
 server/public/*
