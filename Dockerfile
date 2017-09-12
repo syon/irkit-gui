@@ -10,6 +10,8 @@ RUN cd app && \
 RUN cd server && \
     npm install --silent
 
+RUN mv app/dist server/public
+
 WORKDIR /work/server
 
 EXPOSE 3000
