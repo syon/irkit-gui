@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var request = require('request');
-require('dotenv').config();
+require('dotenv').config({ path: __dirname + '/../../.env' });
 var signals = require('../../.irkit.json');
 
 router.post('/', function(req, res, next) {
