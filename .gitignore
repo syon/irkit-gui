@@ -2,8 +2,6 @@
 node_modules/
 .env
 
-/irkit-data/*
-/irkit-data/.irkit.json
-!/irkit-data/.gitkeep
+.irkit.json
 
 server/public/*

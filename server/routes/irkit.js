@@ -3,7 +3,7 @@ var router = express.Router();
 
 var request = require('request');
 require('dotenv').config();
-var signals = require('../../irkit-data/.irkit.json');
+var signals = require('../../.irkit.json');
 
 router.post('/', function(req, res, next) {
   var signal = signals.IR[req.body.key];
