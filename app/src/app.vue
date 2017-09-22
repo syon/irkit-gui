@@ -10,13 +10,10 @@
 
       f7-pages
         f7-page
-          f7-block-title Welcome to my App
-          f7-block(inner)
-            p Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.
-          f7-block-title Navigation
+          f7-block-title Switches
           f7-list
             template(v-for='k in signals')
-              f7-list-item(@click='send(k)' :title="k")
+              f7-list-button(@click='send(k)') {{ k }}
 </template>
 
 <script>
@@ -42,3 +39,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.list-block .list-button {
+  text-align: left;
+}
+</style>
