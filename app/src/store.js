@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-import IRKitData from '../../irkit-data/.irkit.json'
+import IRKitData from '../../.irkit.json'
 
 export default new Vuex.Store({
   state: {
